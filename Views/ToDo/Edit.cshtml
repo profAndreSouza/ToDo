@@ -1,0 +1,18 @@
+@model ToDoApi.Models.ToDoItem
+
+<h2>Editar Tarefa</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div>
+        <label>Título</label>
+        <input asp-for="Title" class="form-control" required />
+    </div>
+    <div>
+        <label>Status</label>
+        <input type="checkbox" asp-for="IsCompleted" />
+    </div>
+    <div>
+        <input type="submit" value="Salvar" class="btn btn-primary mt-3" />
+    </div>
+</form>
