@@ -155,3 +155,4 @@ C:\projects\SENAI\ToDoApi\bin\Debug\net9.0\runtimes\win-x64\native\e_sqlite3.dll
 C:\projects\SENAI\ToDoApi\bin\Debug\net9.0\runtimes\win-x86\native\e_sqlite3.dll
 C:\projects\SENAI\ToDoApi\obj\Debug\net9.0\ToDoApi.RazorAssemblyInfo.cache
 C:\projects\SENAI\ToDoApi\obj\Debug\net9.0\ToDoApi.RazorAssemblyInfo.cs
+C:\projects\SENAI\ToDoApi\obj\Debug\net9.0\ToDoApi.sourcelink.json

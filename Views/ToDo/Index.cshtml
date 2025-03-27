@@ -8,6 +8,7 @@
         <tr>
             <th>ID</th>
             <th>Título</th>
+            <th>Descrição</th>
             <th>Concluído</th>
             <th>Ações</th>
         </tr>
@@ -18,10 +19,11 @@
             <tr>
                 <td>@item.Id</td>
                 <td>@item.Title</td>
-                <td>@(item.IsCompleted ? "✅ Sim" : "❌ Não")</td>
+                <td>@item.Description</td>
+                <td>@(item.IsCompleted ? "Sim" : "Não")</td>
                 <td>
-                    <a href="@Url.Action("Edit", new { id = item.Id })">✏️ Editar</a> | 
-                    <a href="@Url.Action("Delete", new { id = item.Id })">🗑 Excluir</a>
+                    <a href="@Url.Action("Edit", new { id = item.Id })">Editar</a> | 
+                    <a href="@Url.Action("Delete", new { id = item.Id })">Excluir</a>
                 </td>
             </tr>
         }

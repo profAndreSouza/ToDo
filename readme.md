@@ -4,7 +4,7 @@
 
 O comando `dotnet new` é utilizado para criar um novo projeto, arquivo de configuração ou solução com base em um modelo especificado.
 
-[Documentação oficial](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-new)
+[Documentação oficial](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-new){:target="_blank"}
 
 Para criar uma nova aplicação Web API utilizando .NET:
 ```sh
@@ -20,7 +20,7 @@ dotnet run
 
 RESTFul é um estilo arquitetural que define um conjunto de restrições para a criação de serviços Web. APIs RESTFul seguem os princípios REST para comunicação entre sistemas.
 
-[Saiba mais](https://aws.amazon.com/pt/what-is/restful-api/)
+[Saiba mais](https://aws.amazon.com/pt/what-is/restful-api/){:target="_blank"}
 
 ## Arquitetura MVC
 
@@ -29,13 +29,13 @@ A arquitetura MVC (Model-View-Controller) separa a aplicação em três camadas:
 - **View**: Camada de apresentação, exibe os dados ao usuário.
 - **Controller**: Controla a interação entre Model e View, recebendo requisições e retornando respostas.
 
-[Saiba mais](https://aws.amazon.com/pt/what-is/restful-api/)
+[Saiba mais](https://aws.amazon.com/pt/what-is/restful-api/){:target="_blank"}
 
 ## Orientação a Objetos
 
 A Programação Orientada a Objetos (POO) é um paradigma de programação baseado em conceitos como classes, objetos, herança, encapsulamento e polimorfismo.
 
-[Leia mais sobre POO](https://www.alura.com.br/artigos/poo-programacao-orientada-a-objetos?srsltid=AfmBOoqp27m67Pz73CpRdbgW3aOuMSGFfhBOx1tvpEKBhku3BG6VEUAj)
+[Leia mais sobre POO](https://www.alura.com.br/artigos/poo-programacao-orientada-a-objetos){:target="_blank"}
 
 ## Pacotes
 
@@ -64,6 +64,7 @@ namespace ToDoMvc.Models
     {
         public int Id { get; set; }
         public string? Title { get; set; }
+        public string? Description { get; set; }
         public bool IsCompleted { get; set; }
     }
 }
@@ -160,6 +161,7 @@ Crie `Views/ToDo/Index.cshtml`:
         <tr>
             <th>ID</th>
             <th>Título</th>
+            <th>Descrição</th>
             <th>Concluído</th>
             <th>Ações</th>
         </tr>
@@ -170,10 +172,11 @@ Crie `Views/ToDo/Index.cshtml`:
             <tr>
                 <td>@item.Id</td>
                 <td>@item.Title</td>
-                <td>@(item.IsCompleted ? "✅ Sim" : "❌ Não")</td>
+                <td>@item.Description</td>
+                <td>@(item.IsCompleted ? "Sim" : "Não")</td>
                 <td>
-                    <a href="@Url.Action("Edit", new { id = item.Id })">✏️ Editar</a> |
-                    <a href="@Url.Action("Delete", new { id = item.Id })">🗑 Excluir</a>
+                    <a href="@Url.Action("Edit", new { id = item.Id })">Editar</a> |
+                    <a href="@Url.Action("Delete", new { id = item.Id })">Excluir</a>
                 </td>
             </tr>
         }
