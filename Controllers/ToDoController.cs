@@ -28,16 +28,14 @@ namespace ToDoApi.Controllers
 
         // Criação de uma nova tarefa (POST)
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(ToDoItem toDoItem)
         {
-            if (ModelState.IsValid)
-            {
-                _context.Add(toDoItem);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(toDoItem);
+            
+            _context.Add(toDoItem);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+
+            // return Ok(new {message="debug", item=toDoItem});
         }
 
         // Formulário para edição
@@ -53,7 +51,6 @@ namespace ToDoApi.Controllers
 
         // Edita uma tarefa (POST)
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, ToDoItem toDoItem)
         {
             if (id != toDoItem.Id)
@@ -61,13 +58,12 @@ namespace ToDoApi.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
-            {
-                _context.Update(toDoItem);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(toDoItem);
+            // return Ok(toDoItem);
+
+            _context.Update(toDoItem);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+            
         }
 
         // Exclui uma tarefa
