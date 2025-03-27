@@ -58,8 +58,6 @@ namespace ToDoApi.Controllers
                 return NotFound();
             }
 
-            // return Ok(toDoItem);
-
             _context.Update(toDoItem);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
